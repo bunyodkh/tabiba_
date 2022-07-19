@@ -1,0 +1,14 @@
+{% load static %}
+{% load quote_extras %}
+
+{% if quote %}
+    <section class="section">
+        <div class="quote light-pink">
+            <div class="star-icon"><img src="{% static 'images/star.png' %}" alt="Star icon"></div>
+            <figure>
+                <blockquote class="quote-text">«{{ quote.title }}» </blockquote>
+                <figcaption class="quote-author">{{ quote.author }}</figcaption>
+            </figure>
+        </div>
+    </section>
+{% endif %}

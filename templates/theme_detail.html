@@ -1,0 +1,40 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load themes_extras %}
+
+
+
+{% block content %}
+    
+    {% include 'includes/header_slim.html' %}
+    
+    <section class="section">
+        <div class="article-detail">
+            <div class="article-content">
+                <h1 class="article-detail-heading">{{ theme }}</h1>    
+                
+                {% if posts %}
+                    <div class="related-articles">   
+                        <div class="regular-articles">
+
+                            {% for post in posts %}
+                                <article class="regular-article">
+                                    {% if post.main_image %}<img src="{{ post.main_image.url }}" alt="{{ post.title }}">{% endif %}
+                                    <div>
+                                        <a href="/"><p class="category regular">{{ post.category }}</p></a>
+                                        <a href="/"><h3 class="article-heading secondary">{{ post.title }}</h3></a>
+                                        {% if post.brief %}<p class="regular-article-brief">{{ post.brief }}</p>{% endif %}
+                                    </div> 
+                                </article>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>  
+
+    {% include 'includes/footer.html' %}
+
+{% endblock content %}

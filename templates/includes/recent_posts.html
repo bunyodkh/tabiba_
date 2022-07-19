@@ -1,0 +1,50 @@
+{% load static %}
+{% load themes_extras %}
+
+<section class="section">
+    <div class="articles">
+        <h2 class="articles-heading">Последние статьи</h2>
+
+        <div class="articles-content">
+            <div class="articles-list">
+                
+                {% if main_post %}
+                    <article class="main-article">
+                        <img src="{% if main_post.main_image %}{{ main_post.main_image.url }}{% endif %}" alt="">
+                        <a href="/"><p class="category">{{ main_post.category }}</p></a>
+                        <a href="{{ main_post.get_absolute_url }}"><h3 class="article-heading main">{{ main_post.title }}</h3></a>
+                        <p class="main-article-brief">{{ main_post.brief }}</p>
+                        <a class="read-more" href="{{ main_post.get_absolute_url }}">Читать историю</a>
+                    </article>
+                {% endif %}
+
+                <div class="regular-articles">
+                    {% if recent_posts %}
+                        {% for post in recent_posts %}
+                            <article class="regular-article">
+                                {% if post.main_image %}
+                                    <img src="{{ post.main_image.url }}" alt="{{ post.title }}">
+                                {% endif %}
+                                
+                                <div>
+                                    <a href="/"><p class="category regular">{{ post.category }}</p></a>
+                                    <a href="{{ post.get_absolute_url }}"><h3 class="article-heading secondary">{{ post.title }}</h3></a>
+
+                                    {% if post.brief %}
+                                        <p class="regular-article-brief">{{ post.brief }}</p>
+                                    {% endif %}
+                                </div> 
+                            </article>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
+            <aside class="misc-blocks">
+                <div class="ad-block">
+                    <img src="{% static 'images/ad.jpg' %}" alt="">
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

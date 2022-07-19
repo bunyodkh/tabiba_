@@ -1,0 +1,30 @@
+{% load themes_extras %}
+
+{% if themes %}
+    <section class="section">
+        <div class="tags">
+            <h2 class="tags-heading">Искат по темам</h2>
+            <ul class="tags-list">
+                {% for theme in themes %}
+                    {% if theme.post_set.all %}
+                        <li><a class="tags-item" href="{{ theme.get_absolute_url }}">{{ theme }}</a></li>
+                    {% endif %}            
+                {% endfor %}                         
+            </ul>
+        </div>
+    </section>
+{% endif %}
+
+<!-- 
+    <li><a class="tags-item" href="/">Неинфекционные заболевания</a></li>
+    <li><a class="tags-item" href="/">Инфаркт</a></li>    
+    <li><a class="tags-item" href="/">Артериальное давление</a></li>
+    <li><a class="tags-item" href="/">Инсульт</a></li>
+    <li><a class="tags-item" href="/">Холестерин</a></li>
+    <li><a class="tags-item" href="/">Диабет</a></li>
+    <li><a class="tags-item" href="/">Сахар крови</a></li>
+    <li><a class="tags-item" href="/">Диета</a></li>
+    <li><a class="tags-item" href="/">Фитнес</a></li>
+    <li><a class="tags-item" href="/">Лишний вес</a></li>
+    <li><a class="tags-item" href="/">Душевная гармония</a></li>
+    <li><a class="tags-item" href="/">Переходный возраст</a></li> -->

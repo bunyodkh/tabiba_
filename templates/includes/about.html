@@ -1,0 +1,20 @@
+{% load themes_extras %}
+
+
+{% if about %}
+    <section class="section"> 
+        <div class="about white">
+            <div class="about-description">
+                <h2 class="about-heading">О БЛОГЕ</h2>
+                {# class for p elem is 'about-text' #}
+                {{ about.blog_about|safe }}
+            </div>
+
+            <div class="about-description">
+                <h2 class="about-heading">НАША ЦЕЛЬ</h2>
+                {# class for p elem is 'about-text' #}
+                {{ about.blog_goals|safe }}
+            </div>
+        </div>
+    </section>
+{% endif %}

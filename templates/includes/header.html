@@ -1,0 +1,34 @@
+{% load static %}
+{% load themes_extras %}
+
+<section class="section">
+    <header class="header light-pink">
+        <div class="navbar">
+            <a class="logo" href="/">
+                <img src="{% static 'images/logo.svg' %}" alt="Tabiba logotype">
+            </a>
+
+            {% nav_data %}
+
+            <div class="misc">
+                <div class="search-controls"></div>
+
+                <div class="lang-controls">
+                    <a class="lang-item active-lang" href="/ru">Ру</a>
+                    <a class="lang-item" href="/uz">O'z</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="hero">
+            <div class="hero-text">
+                {% intro_text_data %}
+            </div>
+
+            <div class="hero-image">
+                <img src="{% static 'images/header.jpg' %}" alt="Hero image">
+            </div>
+        </div>
+    </header>
+</section>
