@@ -10,6 +10,8 @@ __pycache__/
 /media
 /static
 
+secrets.json
+
 # C extensions
 *.so
 
