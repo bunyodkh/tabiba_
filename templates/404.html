@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html' %}
+{% load themes_extras %}
+{% load quote_extras %}
+{% load static %}
+
+
+{% block content %}
+    
+    {% include 'includes/header.html' %}
+
+    {% include 'includes/content_404.html' %}
+
+    {% recent_posts_data %}
+
+    {% include 'includes/footer.html' %}
+{% endblock content %}
+
+    

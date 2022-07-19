@@ -45,6 +45,96 @@ img {
     background-color: var(--main-color);
 }
 
+.content-404 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+} 
+
+.content-404 > h1 {
+    font-size: 5rem;
+    color: var(--main-color);
+}
+
+/* POST */
+.article-body p {
+    margin-bottom: 1rem;
+    line-height: 2rem;
+}
+
+.post-link {
+    color: #2079e5;
+    text-decoration: underline;
+}
+
+.article-body ul {
+    margin-bottom: 1rem;
+}
+
+.article-body li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    line-height: 2rem;
+    border: 1px solid #ccc;
+    margin-bottom: 0.4rem;
+
+}
+
+.article-body li:hover {
+    background: #f4f4f4;
+}
+
+.article-body li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    line-height: 2rem;
+}
+
+
+.download-link,
+.test-link {
+    color: #2079e5;
+    padding-left: 28px;
+    position: relative;
+}
+
+.download-link strong,
+.test-link strong {
+    color: #2079e5;
+}
+
+.download-link strong::before,
+.test-link strong::before {
+    display: inline-block;
+    content: '';
+    background-size: 25px;
+    width: 25px;
+    height: 25px;
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.test-link strong::before {
+    background-image: url(/static/images/question.png);
+}
+
+.download-link strong::before {
+    background-image: url(/static/images/download.png);
+}
+
+
+
+.emph-box {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+
 /* HEADER */
 .header {
     position: relative;
@@ -645,7 +735,6 @@ img {
     letter-spacing: -0.02em;
     color: #000;
     margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 .article-detail-text {
@@ -660,7 +749,7 @@ img {
 
 .article-meta-info {
     display: flex;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     align-items: center;
 }
 
@@ -701,9 +790,6 @@ img {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
-
-
-
 
 
 

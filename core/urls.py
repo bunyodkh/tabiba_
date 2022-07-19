@@ -4,6 +4,9 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from posts.views import e_handler404
+from posts.views import e_handler500
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,6 +14,9 @@ urlpatterns = [
     path('pages/', include('pages.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
+
+handler404 = e_handler404
+handler500 = e_handler500
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
