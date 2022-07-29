@@ -1,10 +1,10 @@
-{% load themes_extras %}
+{% load custom_tags %}
 
 <nav class="nav">
     <ul class="nav-items">
         {% if categories %}
             {% for cat in categories %}
-                <li class="nav-item" ><a href="pages/{{ cat.get_slug }}">{{ cat.title }}</a></li>            
+                <li class="nav-item" ><a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a></li>            
             {% endfor %}                         
         {% endif %}
     </ul>

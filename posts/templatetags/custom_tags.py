@@ -1,8 +1,22 @@
 from django import template
-from django.shortcuts import get_object_or_404, get_list_or_404
+from django.shortcuts import get_list_or_404
+from quotes.models import Quote
 from posts.models import Theme, Category, About, Post
 
 register = template.Library()
+
+@register.inclusion_tag('includes/quotes.html')
+def quote_data():  
+  try:
+    quote = Quote.objects.get(active=True)
+    print(quote)
+  except Quote.DoesNotExist:
+    quote = None
+
+  return {
+    'quote' : quote
+  }
+
 
 @register.inclusion_tag('includes/themes.html')
 def themes_data():  
@@ -14,7 +28,6 @@ def themes_data():
   return {
     'themes' : themes
   }
-
 
 
 @register.inclusion_tag('includes/nav.html')
@@ -68,4 +81,3 @@ def recent_posts_data():
     'recent_posts' : posts,
     'main_post': main_post
   }
-

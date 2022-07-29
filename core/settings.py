@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'posts',
     'postsuz',
     'quotes',
-    'settings',
     'pages',
 ]
 

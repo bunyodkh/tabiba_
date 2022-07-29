@@ -54,10 +54,10 @@ class About(models.Model):
 
 class Category(models.Model):
     title = models.CharField(_('Категория'), max_length=50, null=False, blank=False, help_text=_('Название категории. Не может быть пустым. Максимальное количество символов 50.'))
-    slug = models.SlugField(auto_created=True, null=True, blank=True)
-
+    number = models.PositiveIntegerField(_('Порядковый номер'), help_text=_('Номер нужен для сортировки. Например, если значение [0] категория будет отображаться первым в списке.'), null=False, blank=False, default=0)
+    
     class Meta:
-        ordering = ['title']
+        ordering = ['number']
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
 
