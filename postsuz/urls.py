@@ -7,6 +7,6 @@ urlpatterns = [
     path('', home, name='home'),
     path('posts/', post_list, name='postuz-list'),
     path('posts/<str:pk>', post_detail, name='postuz-detail'),
-    path('posts/theme/<str:pk>', theme_detail, name='theme-detail'),
-    path('posts/caregory/<str:pk>', category_detail, name='category-detail'),
+    path('posts/theme/<str:pk>', theme_detail, name='themeuz-detail'),
+    path('posts/caregory/<str:pk>', category_detail, name='categoryuz-detail'),
 ]

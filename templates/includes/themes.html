@@ -3,10 +3,10 @@
 {% if themes %}
     <section class="section">
         <div class="tags">
-            <h2 class="tags-heading">Искат по темам</h2>
+            <h2 class="tags-heading">{% if lang == "ru" %}Искать по темам{% elif lang == "uz" %}Мавзулар асосида қидириш{% endif %}</h2>
             <ul class="tags-list">
                 {% for theme in themes %}
-                    {% if theme.post_set.all %}
+                    {% if theme.postuz_set.all %}
                         <li><a class="tags-item" href="{{ theme.get_absolute_url }}">{{ theme }}</a></li>
                     {% endif %}            
                 {% endfor %}                         
@@ -27,4 +27,4 @@
     <li><a class="tags-item" href="/">Фитнес</a></li>
     <li><a class="tags-item" href="/">Лишний вес</a></li>
     <li><a class="tags-item" href="/">Душевная гармония</a></li>
-    <li><a class="tags-item" href="/">Переходный возраст</a></li> -->
+    <li><a class="tags-item" href="/">Переходный возраст</a></li> -->456

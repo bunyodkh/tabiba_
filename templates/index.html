@@ -7,7 +7,7 @@
     
     {% include 'includes/header.html' %}
 
-    {% about_data %}
+    {% about_data url=request.path %}
 
     <section class="section"> 
         <div class="info crimson">
@@ -40,7 +40,7 @@
 
     {% quote_data %}
 
-    {% themes_data %}
+    {% themes_data url=request.path %}
     
     <section class="section">
         <div class="starter">

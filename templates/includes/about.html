@@ -4,13 +4,13 @@
     <section class="section"> 
         <div class="about white">
             <div class="about-description">
-                <h2 class="about-heading">О БЛОГЕ</h2>
+                <h2 class="about-heading">{% if lang == "ru" %}О БЛОГЕ{% elif lang == "uz" %}БЛОГ ҲАҚИДА{% endif %}</h2>
                 {# class for p elem is 'about-text' #}
                 {{ about.blog_about|safe }}
             </div>
 
             <div class="about-description">
-                <h2 class="about-heading">НАША ЦЕЛЬ</h2>
+                <h2 class="about-heading">{% if lang == "ru" %}НАША ЦЕЛЬ{% elif lang == "uz" %}БИЗНИНГ МАҚСАДИМИЗ{% endif %}</h2>
                 {# class for p elem is 'about-text' #}
                 {{ about.blog_goals|safe }}
             </div>

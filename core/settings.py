@@ -47,9 +47,12 @@ INSTALLED_APPS = [
 
     # custom apps
     'posts',
-    'postsuz',
     'quotes',
     'pages',
+
+    'postsuz',
+    'quotesuz',
+    'pagesuz'
 ]
 
 MIDDLEWARE = [

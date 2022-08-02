@@ -8,13 +8,13 @@
                 <img src="{% static 'images/logo.svg' %}" alt="Tabiba logotype">
             </a>
 
-            {% nav_data %}
+            {% nav_data url=request.path %}
 
             <div class="misc">
                 <div class="search-controls"></div>
 
                 <div class="lang-controls">
-                    <a class="lang-item active-lang" href="/ru">Ру</a>
+                    <a class="lang-item active-lang" href="/">Ру</a>
                     <a class="lang-item" href="/uz">O'z</a>
                 </div>
             </div>
