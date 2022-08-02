@@ -796,5 +796,127 @@ img {
 /* RESPONSIVE STUFF */
 /* 320px — 480px: Mobile devices
 481px — 768px: iPads, Tablets */
+.hamburger,
+.nav-items_mob {
+    display: none;
+}
 
 
+@media screen and (max-width: 1150px) {
+    .hero-text > p {
+        font-size: 1.5rem;
+    }
+
+    .em {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .nav-items,
+    .misc {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+
+    .hero-text > p {
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    .em {
+        font-size: 1.5rem;
+        line-height: 1rem;
+    }
+
+    .nav-items_mob {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        top: 0;
+        justify-content: center;
+        padding: 1rem 2rem;
+    }
+
+    .nav {
+        background-color: yellow;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        z-index: 100;
+    }
+
+    .hamburger > span {
+        display: block;
+        width: 50px;
+        height: 3px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        background-color: var(--main-color);
+    }
+
+    .about {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .about-description,
+    .about-description:first-of-type {
+        padding-top: 0;
+        padding-left: 2rem; 
+        padding-right: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .about-description:first-of-type,
+    .about-description {
+        width: 48%;
+    }
+
+    .about-text {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .hero-text {
+        padding-left: 2rem;
+    }
+
+    .navbar {
+        padding-left: 2rem;
+    }
+
+    .info-text-heading {
+        width: 80%;
+        margin-top: 2rem;
+    }
+
+    .info-text {
+        width: 80%;
+    }
+
+    .info-stats {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .info-stat-box {
+        width: 30%;
+    }
+
+    .starter-block-heading {
+        font-size: 2.5rem;
+        width: 80%;
+    }
+}
