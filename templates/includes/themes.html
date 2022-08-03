@@ -1,18 +1,33 @@
 {% load custom_tags %}
 
 {% if themes %}
-    <section class="section">
-        <div class="tags">
-            <h2 class="tags-heading">{% if lang == "ru" %}Искать по темам{% elif lang == "uz" %}Мавзулар асосида қидириш{% endif %}</h2>
-            <ul class="tags-list">
-                {% for theme in themes %}
-                    {% if theme.postuz_set.all %}
-                        <li><a class="tags-item" href="{{ theme.get_absolute_url }}">{{ theme }}</a></li>
-                    {% endif %}            
-                {% endfor %}                         
-            </ul>
-        </div>
-    </section>
+    {% if lang == "ru" %}
+        <section class="section">
+            <div class="tags">
+                <h2 class="tags-heading">Искать по темам</h2>
+                <ul class="tags-list">
+                    {% for theme in themes %}
+                        {% if theme.post_set.all %}
+                            <li><a class="tags-item" href="{{ theme.get_absolute_url }}">{{ theme }}</a></li>
+                        {% endif %}            
+                    {% endfor %}                         
+                </ul>
+            </div>
+        </section>
+    {% elif lang == "uz"%}
+        <section class="section">
+            <div class="tags">
+                <h2 class="tags-heading">Mavzular asosida qidirish</h2>
+                <ul class="tags-list">
+                    {% for theme in themes %}
+                        {% if theme.postuz_set.all %}
+                            <li><a class="tags-item" href="{{ theme.get_absolute_url }}">{{ theme }}</a></li>
+                        {% endif %}            
+                    {% endfor %}                         
+                </ul>
+            </div>
+        </section>
+    {% endif %}
 {% endif %}
 
 <!-- 
@@ -27,4 +42,4 @@
     <li><a class="tags-item" href="/">Фитнес</a></li>
     <li><a class="tags-item" href="/">Лишний вес</a></li>
     <li><a class="tags-item" href="/">Душевная гармония</a></li>
-    <li><a class="tags-item" href="/">Переходный возраст</a></li> -->456
+    <li><a class="tags-item" href="/">Переходный возраст</a></li> -->

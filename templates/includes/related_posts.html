@@ -1,25 +1,22 @@
 {% load static %}
 {% load custom_tags %}
 
-<div class="related-articles">
-    <h3 class="article-heading secondary">Другие материалы по теме</h3>     
-    <div class="regular-articles">
-        <article class="regular-article">
-            <img src="{% static 'images/regular-0.jpg' %}" alt="">
-            <div>
-                <a href="/"><p class="category regular">ЖИЗНЬ</p></a>
-                <a href="/"><h3 class="article-heading secondary">Здоровой образ жизни для женщин</h3></a>
-                <p class="regular-article-brief">Здоровье - залог реализации личности, достижения целей и источник счастья. Для женщины это еще и необходимый фундамент...</p>
-            </div> 
-        </article>
-
-        <article class="regular-article">
-            <img src="{% static 'images/regular-1.jpg' %}" alt="">
-            <div>
-                <a href="/"><p class="category regular">ЖИЗНЬ</p></a>
-                <a href="/"><h3 class="article-heading secondary">Здоровой образ жизни для женщин</h3></a>
-                <p class="regular-article-brief">Здоровье - залог реализации личности, достижения целей и источник счастья. Для женщины это еще и необходимый фундамент...</p>
-            </div> 
-        </article>
+{% if posts %} 
+    <div class="related-articles">
+        <h3 class="article-heading secondary">Другие материалы по теме</h3>     
+        <div class="regular-articles">
+            {% for post in posts %}
+                <article class="regular-article">
+                    {% if post.main_image %} <img src="{{ post.main_image.url }}" alt="{{ post.title }}">{% endif %}
+                    <div>
+                        <a href="{{ post.category.get_absolute_url }}"><p class="category regular">{{ post.category.title }}</p></a>
+                        <a href="{{ post.get_absolute_url }}"><h3 class="article-heading secondary">{{ post.title }}</h3></a>
+                        {% if post.brief %}
+                            <p class="regular-article-brief">{{ post.brief }}</p>
+                        {% endif %}
+                    </div> 
+                </article>
+            {% endfor %}
+        </div>
     </div>
-</div>
+{% endif %}

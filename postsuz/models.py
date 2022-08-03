@@ -86,5 +86,5 @@ class ThemeUz(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('posts:theme-detail', kwargs={'pk': self.id})
+        return reverse('postsuz:themeuz-detail', kwargs={'pk': self.id})
 

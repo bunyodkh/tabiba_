@@ -8,10 +8,16 @@
                 <img src="{% static 'images/logo.svg' %}" alt="Tabiba logotype">
             </a>
 
-            {% nav_data %}
+            {% nav_data url=request.path %}
 
             <div class="misc">
-                <div class="search-controls"></div>
+                <div id="search-control" class="search-controls">
+                    <img src="{% static 'images/search.png' %}" alt="Search icon">
+                </div>
+
+                <form id="search-form" class="search-form" action="{% url 'posts:search-for' %}"">
+                    <input class="search-input" type="text" name="q" placeholder="{% if 'uz' not in request.path %}Поиск{% else %}Qidiruv{% endif %}">
+                </form>
 
                 <div class="lang-controls">
                     <a class="lang-item active-lang" href="/ru">Ру</a>

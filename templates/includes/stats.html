@@ -1,0 +1,30 @@
+{% load custom_tags %}
+
+<section class="section"> 
+    <div class="info crimson">
+        <h2 class="info-text-heading">
+            <p>{{ heading }}</p>
+        </h2>
+
+        <div class="info-text">
+            <p>{{ text }}</p>
+        </div>
+
+        <div class="info-stats">
+            <div class="info-stat-box">
+                <h3>{{ stats.first.number }}</h3>
+                <p>{{ stats.first.text }}</p>
+            </div>
+
+            <div class="info-stat-box">
+                <h3>{{ stats.first.number }}</h3>
+                <p>{{ stats.first.text }}</p>
+            </div>
+
+            <div class="info-stat-box">
+                <h3>{{ stats.first.number }}</h3>
+                <p>{{ stats.first.text }}</p>
+            </div>
+        </div>
+    </div>
+</section>

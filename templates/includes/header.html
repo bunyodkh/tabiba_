@@ -4,18 +4,25 @@
 <section class="section">
     <header class="header light-pink">
         <div class="navbar">
-            <a class="logo" href="/">
+            <a class="logo" href="{% if 'uz' not in request.path %}/{% elif 'uz' in request.path%}/uz{% endif %}">
                 <img src="{% static 'images/logo.svg' %}" alt="Tabiba logotype">
             </a>
 
             {% nav_data url=request.path %}
 
             <div class="misc">
-                <div class="search-controls"></div>
+                <div id="search-control" class="search-controls">
+                    <img src="{% static 'images/search.png' %}" alt="Search icon">
+                </div>
+
+                <form id="search-form" class="search-form" action="{% url 'posts:search-for' %}"">
+                    {{ crsf_token }}
+                    <input class="search-input" type="text" name="q" placeholder="{% if 'uz' not in request.path %}Поиск{% else %}Qidiruv{% endif %}">
+                </form>
 
                 <div class="lang-controls">
-                    <a class="lang-item active-lang" href="/">Ру</a>
-                    <a class="lang-item" href="/uz">O'z</a>
+                    <a class="lang-item {% if 'uz' not in request.path %}active-lang{% endif %}" href="/">Ру</a>
+                    <a class="lang-item {% if 'uz' in request.path %}active-lang{% endif %}" href="/uz">O'z</a>
                 </div>
             </div>
         </div>
@@ -23,7 +30,7 @@
 
         <div class="hero">
             <div class="hero-text">
-                {% intro_text_data %}
+                {% intro_text_data url=request.path %}
             </div>
 
             <div class="hero-image">

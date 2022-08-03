@@ -1,0 +1,49 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+
+
+{% block content %}
+    
+    {% include 'includes/header_slim.html' %}
+    
+    <section class="section">
+        <div class="article-detail">
+            <div class="article-content">
+                <h1 class="article-detail-heading">Рузультаты поиска для "{{ q }}"</h1>    
+                
+                <div class="related-articles">   
+                    <div class="regular-articles">
+                        {% if postsbytitle or postsbybody %}
+                            {% for post in postsbytitle %}
+                                <article class="regular-article">
+                                    {% if post.main_image %}<img src="{{ post.main_image.url }}" alt="{{ post.title }}">{% endif %}
+                                    <div>
+                                        <a href="{{ post.category.get_absolute_url }}"><p class="category regular">{{ post.category }}</p></a>
+                                        <a href="{{ post.get_absolute_url }}"><h3 class="article-heading secondary">{{ post.title }}</h3></a>
+                                        {% if post.brief %}<p class="regular-article-brief">{{ post.brief }}</p>{% endif %}
+                                    </div> 
+                                </article>
+                            {% endfor %}
+
+                            {% for post in postsbybody %}
+                                <article class="regular-article">
+                                    {% if post.main_image %}<img src="{{ post.main_image.url }}" alt="{{ post.title }}">{% endif %}
+                                    <div>
+                                        <a href="{{ post.category.get_absolute_url }}"><p class="category regular">{{ post.category }}</p></a>
+                                        <a href="{{ post.get_absolute_url }}"><h3 class="article-heading secondary">{{ post.title }}</h3></a>
+                                        {% if post.brief %}<p class="regular-article-brief">{{ post.brief }}</p>{% endif %}
+                                    </div> 
+                                </article>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+    {% include 'includes/footer.html' %}
+
+{% endblock content %}

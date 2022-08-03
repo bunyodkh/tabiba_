@@ -9,66 +9,13 @@
 
     {% about_data url=request.path %}
 
-    <section class="section"> 
-        <div class="info crimson">
-            <h2 class="info-text-heading">
-                <p>В мире каждый год более 35 миллионов людей умирают от неинфекционных болезней.</p>
-            </h2>
-
-            <div class="info-text">
-                <p>Большинство смертей можно было бы предотвратить, поменяв образ жизни людей. Исследования показали, что курение, употребление алкоголя в больших количествах, неправильное питание и сидячий образ жизни являются основным рисками развития НИЗ.</p>
-            </div>
-
-            <div class="info-stats">
-                <div class="info-stat-box">
-                    <h3>18.6</h3>
-                    <p>миллионов смертей от ССЗ</p>
-                </div>
-
-                <div class="info-stat-box">
-                    <h3>6.7</h3>
-                    <p>миллионов от сахарного диабета</p>
-                </div>
-
-                <div class="info-stat-box">
-                    <h3>10</h3>
-                    <p>миллионов от различных видов рака</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% stats_data url=request.path %}
 
     {% quote_data %}
 
     {% themes_data url=request.path %}
     
-    <section class="section">
-        <div class="starter">
-            <h2 class="starter-heading">Если вы в первый раз у нас в гостях, рекомендуем начать здесь</h2>
-
-            <div class="starter-blocks">
-                <div class="starter-block block-0">
-                    <div class="starter-block-ol"></div>
-                    <a href="/posts/post-detail"><h3 class="starter-block-heading">Все что нужно знать об инфаркте и инсульте</h3></a>
-                </div>
-
-                <div class="starter-block block-1">
-                    <div class="starter-block-ol"></div>
-                    <a href="/"><h3 class="starter-block-heading">Все что нужно знать о сахарном диабете</h3></a>
-                </div>
-
-                <div class="starter-block  block-2">
-                    <div class="starter-block-ol"></div>
-                    <a href="/"><h3 class="starter-block-heading">Здоровый Образ Жизни — что это?</h3></a>
-                </div>
-
-                <div class="starter-block block-3">
-                    <div class="starter-block-ol"></div>
-                    <a href="/"><h3 class="starter-block-heading">Здоровье женщины до и после 40</h3></a>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include 'includes/starter.html' %}
 
     {% recent_posts_data %}
 

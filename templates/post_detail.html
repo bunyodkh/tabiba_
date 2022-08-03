@@ -31,7 +31,7 @@
                     {{ post.full_content|safe }}
                 </div>
                 
-                {% include 'includes/related_posts.html' %}
+                {% related_posts category=post.category %}
             </div>
         </div>
     </section>  
